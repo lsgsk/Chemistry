@@ -22,7 +22,7 @@ final class MassFractionViewModel: ObservableObject {
 	private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 
 	init() {
-		print("@@@ MassFractionViewModel init")
+		print("### MassFractionViewModel init")
 		$selected.sink { [weak self] selected in
 			guard let self else { return }
 			switch selected {
@@ -66,16 +66,19 @@ struct MassFractionView: View {
 	
 	var body: some View {
 		List {
-			Picker("Ищем:", selection: $vm.selected) {
-				Text("Массу вещества").tag(MassFractionViewModel.Characteristic.substance)
-				Text("Массу растворителя").tag(MassFractionViewModel.Characteristic.solvent)
-				Text("Массовую долю ω").tag(MassFractionViewModel.Characteristic.concentration)
+			Picker("", selection: $vm.selected) {
+				Text("Ищем m вещества")
+					.tag(MassFractionViewModel.Characteristic.substance)
+				Text("Ищем m растворителя")
+					.tag(MassFractionViewModel.Characteristic.solvent)
+				Text("Ищем ω (массовую долю)")
+					.tag(MassFractionViewModel.Characteristic.concentration)
 			}
-			.onChange(of: vm.selected) { _ in
-				hideKeyboard()
-			}
+			.labelsHidden()
+			.listRowSeparator(.hidden)
+			.onChange(of: vm.selected) { _ in hideKeyboard() }
 			VStack {
-				FloatingTextField("m веществава:", value: $vm.substance)
+				FloatingTextField("m вещества:", value: $vm.substance)
 					.disabled(vm.isSubstanceDisabled)
 				FloatingTextField("m растворителя", value: $vm.solvent)
 					.disabled(vm.isSolventDisabled)

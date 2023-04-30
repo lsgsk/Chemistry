@@ -17,7 +17,7 @@ final class MolecularMassViewModel: ObservableObject {
 	private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 	
 	init(type: MolecularMassType) {
-		print("@@@ MolecularMassViewModel init")
+		print("### MolecularMassViewModel init")
 		switch type {
 		case .base:
 			self.isAsseptHidden = true
@@ -29,7 +29,7 @@ final class MolecularMassViewModel: ObservableObject {
 		self.$molecule.sink { radicals in
 			self.unifiedAtomicMass = radicals.unifiedAtomicMass
 			if radicals.molecule.isEmpty {
-				self.formula = "Введите формулу вещества"
+				self.formula = "Формула вещества"
 				self.aeMass = "0 а.е.м."
 			}
 			else {
@@ -69,12 +69,13 @@ struct MolecularMassView: View {
 			VStack {
 				Text(vm.formula)
 					.font(.headline)
+					.multilineTextAlignment(.center)
 					.padding()
 				Text(vm.aeMass.description)
 					.font(.subheadline)
 			}
 			.frame(maxWidth: .infinity)
-			.frame(height: 150)
+			.frame(height: 100)
 			.listRowSeparator(.hidden)
 			AllElementsView(elementClick: { vm.append($0) },
 							backspaceClick: { vm.removeLast() })

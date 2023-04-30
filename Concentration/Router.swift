@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 enum Routes: CaseIterable {
+
 	case massFraction
 	case pirsonMethod
 	case molecularMass

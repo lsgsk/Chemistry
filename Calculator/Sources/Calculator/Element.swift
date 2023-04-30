@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Element: String, Equatable
+public enum Element: String, Equatable, CaseIterable
 {
 	case H, C, N, O, F, Na, P, S, Cl, К, Ca, Fe, Br, I
 	

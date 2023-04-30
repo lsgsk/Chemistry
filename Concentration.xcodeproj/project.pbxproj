@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C206FC8F29FE97FD00DD750E /* UIApplication+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = C206FC8E29FE97FD00DD750E /* UIApplication+Extension .swift */; };
 		C210971A29FD4B2F00967F4D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210971929FD4B2F00967F4D /* Router.swift */; };
 		C210971C29FE462E00967F4D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210971B29FE462E00967F4D /* View+Extensions.swift */; };
 		C23DEA4C29DAB57D00E317BD /* MassFractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23DEA4B29DAB57D00E317BD /* MassFractionView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C206FC8E29FE97FD00DD750E /* UIApplication+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension .swift"; sourceTree = "<group>"; };
 		C210971929FD4B2F00967F4D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C210971B29FE462E00967F4D /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		C23DEA4B29DAB57D00E317BD /* MassFractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassFractionView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				C23DEA5029DAD19D00E317BD /* FloatingTextField.swift */,
 				C251CBEA29DEF57B00BB7427 /* AllElementsView.swift */,
 				C210971B29FE462E00967F4D /* View+Extensions.swift */,
+				C206FC8E29FE97FD00DD750E /* UIApplication+Extension .swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				C2B448CB29D81BCB0011F5D5 /* ConcentrationApp.swift in Sources */,
 				C23DEA5129DAD19D00E317BD /* FloatingTextField.swift in Sources */,
 				C23DEA5529DC40B400E317BD /* MolecularMassView.swift in Sources */,
+				C206FC8F29FE97FD00DD750E /* UIApplication+Extension .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

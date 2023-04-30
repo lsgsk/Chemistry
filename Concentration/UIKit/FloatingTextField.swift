@@ -13,7 +13,7 @@ struct FloatingTextField: View {
 	var body: some View {
 		ZStack {
 			TextField("", value: self.$value, format: .number)
-				.keyboardType(.numberPad)
+				.keyboardType(.decimalPad)
 			HStack {
 				Text(self.placeholder)
 					.font(.caption2)

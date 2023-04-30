@@ -13,23 +13,25 @@ final class MolarConcentrationViewModel: ObservableObject {
 		case liter
 		case milliliter
 	}
+
 	@Published var unifiedAtomicMass: Decimal = Decimal.zero
 	@Published var molarity: Decimal = Decimal.zero
 	@Published var solutionHeder: String = ""
 	@Published var solutionValume: Decimal = Decimal.zero
 	@Published var solutionType: VolumeUnits = .milliliter
-	@Published var soluteMassInVolume: String = ""
-	@Published var soluteMassInLiter: String = ""
+	@Published var soluteMassInVolume = AttributedString()
+	@Published var soluteMassInLiter = AttributedString()
 	@Published var solutionVolume: String = ""
 	@Published private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 
 	init() {
-		print("@@@ MolarConcentrationViewModel init")
+		print("### MolarConcentrationViewModel init")
 		Publishers.CombineLatest4(self.$unifiedAtomicMass.removeDuplicates(),
 								  self.$molarity.removeDuplicates(),
 								  self.$solutionValume.removeDuplicates(),
 								  self.$solutionType.removeDuplicates())
-		.sink { (unifiedAtomicMass, molarity, solutionValume, solutionType) in
+		.sink { [weak self] (unifiedAtomicMass, molarity, solutionValume, solutionType) in
+			guard let self else { return }
 			var valueCoefficient = Decimal(floatLiteral: 1)
 			switch solutionType {
 			case .liter:
@@ -40,8 +42,26 @@ final class MolarConcentrationViewModel: ObservableObject {
 				self.solutionHeder = "Объем раствора (мл.)"
 				self.solutionVolume = "\(solutionValume) мл."
 			}
-			self.soluteMassInVolume = (unifiedAtomicMass * molarity * solutionValume * valueCoefficient).description
-			self.soluteMassInLiter = (unifiedAtomicMass * molarity * valueCoefficient).description
+			self.soluteMassInVolume = {
+				let soluteMass = (unifiedAtomicMass * molarity * solutionValume * valueCoefficient).description
+				var mass = AttributedString("\(soluteMass)")
+				mass.font = .headline
+				var units = AttributedString(" г вещества в ")
+				units.font = Font.footnote
+				var volume = AttributedString("\(self.solutionVolume)")
+				volume.font = .headline
+				var solution = AttributedString(" раствора")
+				solution.font = Font.footnote
+				return mass + units + volume + solution
+			}()
+			self.soluteMassInLiter = {
+				let soluteMass = (unifiedAtomicMass * molarity).description
+				var mass = AttributedString("\(soluteMass)")
+				mass.font = .headline
+				var units = AttributedString(" г вещества в 1 л. раствора")
+				units.font = Font.footnote
+				return mass + units
+			}()
 		}
 		.store(in: &cancellables)
 	}
@@ -54,7 +74,7 @@ struct MolarConcentrationView: View {
 	var body: some View {
 		List {
 			HStack {
-				FloatingTextField("Молекулярная масса вещества", value: self.$vm.unifiedAtomicMass)
+				FloatingTextField("Молярная масса вещества", value: self.$vm.unifiedAtomicMass)
 				Button("Ввести") {
 					router.showSheet.toggle()
 				}
@@ -77,8 +97,8 @@ struct MolarConcentrationView: View {
 				.frame(width: 70)
 			}
 			.listRowSeparator(.hidden)
-			Text("\(self.vm.soluteMassInVolume) г вещества в \(self.vm.solutionVolume) раствора")
-			Text("\(self.vm.soluteMassInLiter) г вещества в 1 л. раствора")
+			Text(self.vm.soluteMassInVolume)
+			Text(self.vm.soluteMassInLiter)
 		}
 	}
 }

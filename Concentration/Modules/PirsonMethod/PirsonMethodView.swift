@@ -7,7 +7,7 @@ final class PirsonMethodViewModel: ObservableObject {
 		case resultSubstance
 	}
 	
-	@Published var selected: PirsonMethodViewModel.KnownVolumes = .resultSubstance
+	@Published var selected: PirsonMethodViewModel.KnownVolumes = .twoSubstance
 	@Published var value1: Decimal = 0
 	@Published var concentration1: Decimal = 0
 	@Published var value2: Decimal = 0
@@ -18,7 +18,7 @@ final class PirsonMethodViewModel: ObservableObject {
 	private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 	
 	init() {
-		print("@@@ PirsonMethodViewModel init")
+		print("### PirsonMethodViewModel init")
 		let first = Publishers.CombineLatest($value1.removeDuplicates(), $concentration1.removeDuplicates())
 		let second = Publishers.CombineLatest($value2.removeDuplicates(), $concentration2.removeDuplicates())
 		let result = Publishers.CombineLatest($valueResult.removeDuplicates(), $concentrationResult.removeDuplicates())
@@ -64,32 +64,32 @@ struct PirsonMethodView: View {
 	
 	var body: some View {
 		List {
-			Picker("Знаем:", selection: $vm.selected) {
-				Text("V и ω базовых растворов").tag(PirsonMethodViewModel.KnownVolumes.twoSubstance)
-				Text("V и ω итоговой смеси").tag(PirsonMethodViewModel.KnownVolumes.resultSubstance)
-			}.onChange(of: vm.selected) { _ in
-				self.hideKeyboard()
+			Picker(":", selection: $vm.selected) {
+				Text("Знаем V и ω растворов").tag(PirsonMethodViewModel.KnownVolumes.twoSubstance)
+				Text("Знаем V и ω смеси").tag(PirsonMethodViewModel.KnownVolumes.resultSubstance)
 			}
-			Grid {
-				GridRow {
-					FloatingTextField("V1, ml:", value: $vm.value1)
-					.disabled(vm.selected == .resultSubstance)
+			.labelsHidden()
+			.listRowSeparator(.hidden)
+			.onChange(of: vm.selected) { _ in hideKeyboard() }
+			VStack {
+				HStack {
+					FloatingTextField("V1, мл.", value: $vm.value1)
+						.disabled(vm.selected == .resultSubstance)
 					FloatingTextField("ω1%", value: $vm.concentration1)
 				}
-				Spacer()
-				GridRow {
-					FloatingTextField("V2, ml:", value: $vm.value2)
-					.disabled(vm.selected == .resultSubstance)
+				HStack {
+					FloatingTextField("V2, мл.", value: $vm.value2)
+						.disabled(vm.selected == .resultSubstance)
 					FloatingTextField("ω2%", value: $vm.concentration2)
 				}
-				Spacer()
-				GridRow {
-					FloatingTextField("V смеси, ml:", value: $vm.valueResult)
-					.disabled(vm.selected == .twoSubstance)
+				HStack {
+					FloatingTextField("V смеси, мл.", value: $vm.valueResult)
+						.disabled(vm.selected == .twoSubstance)
 					FloatingTextField("ω смеси %", value: $vm.concentrationResult)
-					.disabled(vm.selected == .twoSubstance)
+						.disabled(vm.selected == .twoSubstance)
 				}
-			}.padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+			}
+			.padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
 		}
 	}
 }

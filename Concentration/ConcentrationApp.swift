@@ -17,6 +17,7 @@ struct ConcentrationApp: App {
 				}
 			}
 			.environmentObject(router)
+			.onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
 		}
 	}
 }

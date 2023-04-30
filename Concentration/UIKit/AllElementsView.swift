@@ -12,28 +12,11 @@ struct AllElementsView: View {
 	}
 
 	var body: some View {
-		Grid {
-			GridRow {
-				ElemetView(.H) { self.elementClick($0) }
-				ElemetView(.C) { self.elementClick($0) }
-				ElemetView(.N) { self.elementClick($0) }
-				ElemetView(.O) { self.elementClick($0) }
-				ElemetView(.F) { self.elementClick($0) }
+		LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))], spacing: 10) {
+			ForEach(Element.allCases, id: \.self) { element in
+				ElemetView(element) { self.elementClick($0) }
 			}
-			GridRow {
-				ElemetView(.Na) { self.elementClick($0) }
-				ElemetView(.P) { self.elementClick($0) }
-				ElemetView(.S) { self.elementClick($0) }
-				ElemetView(.Cl) { self.elementClick($0) }
-				ElemetView(.К) { self.elementClick($0) }
-			}
-			GridRow {
-				ElemetView(.Ca) { self.elementClick($0) }
-				ElemetView(.Fe) { self.elementClick($0) }
-				ElemetView(.Br) { self.elementClick($0) }
-				ElemetView(.I) { self.elementClick($0) }
-				BackSpaceView { self.backspaceClick() }
-			}
+			BackSpaceView { self.backspaceClick() }
 		}
 	}
 }
