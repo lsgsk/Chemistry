@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C210971A29FD4B2F00967F4D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210971929FD4B2F00967F4D /* Router.swift */; };
+		C210971C29FE462E00967F4D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210971B29FE462E00967F4D /* View+Extensions.swift */; };
+		C23DEA4C29DAB57D00E317BD /* MassFractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23DEA4B29DAB57D00E317BD /* MassFractionView.swift */; };
+		C23DEA4F29DABCED00E317BD /* PirsonMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23DEA4E29DABCED00E317BD /* PirsonMethodView.swift */; };
+		C23DEA5129DAD19D00E317BD /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23DEA5029DAD19D00E317BD /* FloatingTextField.swift */; };
+		C23DEA5529DC40B400E317BD /* MolecularMassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23DEA5429DC40B400E317BD /* MolecularMassView.swift */; };
+		C251CBE929DED53300BB7427 /* Calculator in Frameworks */ = {isa = PBXBuildFile; productRef = C251CBE829DED53300BB7427 /* Calculator */; };
+		C251CBEB29DEF57B00BB7427 /* AllElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CBEA29DEF57B00BB7427 /* AllElementsView.swift */; };
+		C251CBF029DEF7D700BB7427 /* MolarConcentrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CBEF29DEF7D600BB7427 /* MolarConcentrationView.swift */; };
+		C2B448CB29D81BCB0011F5D5 /* ConcentrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B448CA29D81BCB0011F5D5 /* ConcentrationApp.swift */; };
+		C2B448CF29D81BCC0011F5D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B448CE29D81BCC0011F5D5 /* Assets.xcassets */; };
+		C2B448D229D81BCC0011F5D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B448D129D81BCC0011F5D5 /* Preview Assets.xcassets */; };
+		C2DA8FD029DEA51E006FC6AA /* ElemetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA8FCF29DEA51E006FC6AA /* ElemetView.swift */; };
+		C2DA8FD229DEB370006FC6AA /* BackspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA8FD129DEB370006FC6AA /* BackspaceView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C210971929FD4B2F00967F4D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C210971B29FE462E00967F4D /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		C23DEA4B29DAB57D00E317BD /* MassFractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassFractionView.swift; sourceTree = "<group>"; };
+		C23DEA4E29DABCED00E317BD /* PirsonMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirsonMethodView.swift; sourceTree = "<group>"; };
+		C23DEA5029DAD19D00E317BD /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		C23DEA5429DC40B400E317BD /* MolecularMassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolecularMassView.swift; sourceTree = "<group>"; };
+		C251CBE629DECD2900BB7427 /* Calculator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Calculator; sourceTree = "<group>"; };
+		C251CBEA29DEF57B00BB7427 /* AllElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllElementsView.swift; sourceTree = "<group>"; };
+		C251CBEF29DEF7D600BB7427 /* MolarConcentrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolarConcentrationView.swift; sourceTree = "<group>"; };
+		C2B448C729D81BCB0011F5D5 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B448CA29D81BCB0011F5D5 /* ConcentrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationApp.swift; sourceTree = "<group>"; };
+		C2B448CE29D81BCC0011F5D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2B448D129D81BCC0011F5D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2DA8FCF29DEA51E006FC6AA /* ElemetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElemetView.swift; sourceTree = "<group>"; };
+		C2DA8FD129DEB370006FC6AA /* BackspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2B448C429D81BCB0011F5D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C251CBE929DED53300BB7427 /* Calculator in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C210971629FD178600967F4D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C2DA8FCF29DEA51E006FC6AA /* ElemetView.swift */,
+				C2DA8FD129DEB370006FC6AA /* BackspaceView.swift */,
+				C23DEA5029DAD19D00E317BD /* FloatingTextField.swift */,
+				C251CBEA29DEF57B00BB7427 /* AllElementsView.swift */,
+				C210971B29FE462E00967F4D /* View+Extensions.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C251CBE529DECD2900BB7427 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				C251CBE629DECD2900BB7427 /* Calculator */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		C251CBE729DED53300BB7427 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C251CBEC29DEF7B500BB7427 /* MolarConcentration */ = {
+			isa = PBXGroup;
+			children = (
+				C251CBEF29DEF7D600BB7427 /* MolarConcentrationView.swift */,
+			);
+			path = MolarConcentration;
+			sourceTree = "<group>";
+		};
+		C2B448BE29D81BCB0011F5D5 = {
+			isa = PBXGroup;
+			children = (
+				C251CBE529DECD2900BB7427 /* Packages */,
+				C2B448C929D81BCB0011F5D5 /* Concentration */,
+				C2B448C829D81BCB0011F5D5 /* Products */,
+				C251CBE729DED53300BB7427 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C2B448C829D81BCB0011F5D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2B448C729D81BCB0011F5D5 /* Concentration.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2B448C929D81BCB0011F5D5 /* Concentration */ = {
+			isa = PBXGroup;
+			children = (
+				C210971629FD178600967F4D /* UIKit */,
+				C2DA8FD729DEC31E006FC6AA /* Modules */,
+				C2B448CA29D81BCB0011F5D5 /* ConcentrationApp.swift */,
+				C210971929FD4B2F00967F4D /* Router.swift */,
+				C2B448CE29D81BCC0011F5D5 /* Assets.xcassets */,
+				C2B448D029D81BCC0011F5D5 /* Preview Content */,
+			);
+			path = Concentration;
+			sourceTree = "<group>";
+		};
+		C2B448D029D81BCC0011F5D5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C2B448D129D81BCC0011F5D5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2DA8FCB29DEA499006FC6AA /* MolecularMass */ = {
+			isa = PBXGroup;
+			children = (
+				C23DEA5429DC40B400E317BD /* MolecularMassView.swift */,
+			);
+			path = MolecularMass;
+			sourceTree = "<group>";
+		};
+		C2DA8FD729DEC31E006FC6AA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C251CBEC29DEF7B500BB7427 /* MolarConcentration */,
+				C2DA8FD929DEC339006FC6AA /* PirsonMethod */,
+				C2DA8FCB29DEA499006FC6AA /* MolecularMass */,
+				C2DA8FD829DEC32A006FC6AA /* MassFraction */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C2DA8FD829DEC32A006FC6AA /* MassFraction */ = {
+			isa = PBXGroup;
+			children = (
+				C23DEA4B29DAB57D00E317BD /* MassFractionView.swift */,
+			);
+			path = MassFraction;
+			sourceTree = "<group>";
+		};
+		C2DA8FD929DEC339006FC6AA /* PirsonMethod */ = {
+			isa = PBXGroup;
+			children = (
+				C23DEA4E29DABCED00E317BD /* PirsonMethodView.swift */,
+			);
+			path = PirsonMethod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2B448C629D81BCB0011F5D5 /* Concentration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2B448D529D81BCC0011F5D5 /* Build configuration list for PBXNativeTarget "Concentration" */;
+			buildPhases = (
+				C23DEA4D29DAB5EB00E317BD /* SwiftLint */,
+				C2B448C329D81BCB0011F5D5 /* Sources */,
+				C2B448C429D81BCB0011F5D5 /* Frameworks */,
+				C2B448C529D81BCB0011F5D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Concentration;
+			packageProductDependencies = (
+				C251CBE829DED53300BB7427 /* Calculator */,
+			);
+			productName = Concentration;
+			productReference = C2B448C729D81BCB0011F5D5 /* Concentration.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2B448BF29D81BCB0011F5D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C2B448C629D81BCB0011F5D5 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C2B448C229D81BCB0011F5D5 /* Build configuration list for PBXProject "Concentration" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2B448BE29D81BCB0011F5D5;
+			productRefGroup = C2B448C829D81BCB0011F5D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2B448C629D81BCB0011F5D5 /* Concentration */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2B448C529D81BCB0011F5D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2B448D229D81BCC0011F5D5 /* Preview Assets.xcassets in Resources */,
+				C2B448CF29D81BCC0011F5D5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C23DEA4D29DAB5EB00E317BD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2B448C329D81BCB0011F5D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C23DEA4F29DABCED00E317BD /* PirsonMethodView.swift in Sources */,
+				C251CBF029DEF7D700BB7427 /* MolarConcentrationView.swift in Sources */,
+				C210971C29FE462E00967F4D /* View+Extensions.swift in Sources */,
+				C2DA8FD029DEA51E006FC6AA /* ElemetView.swift in Sources */,
+				C2DA8FD229DEB370006FC6AA /* BackspaceView.swift in Sources */,
+				C210971A29FD4B2F00967F4D /* Router.swift in Sources */,
+				C251CBEB29DEF57B00BB7427 /* AllElementsView.swift in Sources */,
+				C23DEA4C29DAB57D00E317BD /* MassFractionView.swift in Sources */,
+				C2B448CB29D81BCB0011F5D5 /* ConcentrationApp.swift in Sources */,
+				C23DEA5129DAD19D00E317BD /* FloatingTextField.swift in Sources */,
+				C23DEA5529DC40B400E317BD /* MolecularMassView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C2B448D329D81BCC0011F5D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2B448D429D81BCC0011F5D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2B448D629D81BCC0011F5D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Concentration/Preview Content\"";
+				DEVELOPMENT_TEAM = AD49S3CAT8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lsgsk.Concentration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C2B448D729D81BCC0011F5D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Concentration/Preview Content\"";
+				DEVELOPMENT_TEAM = AD49S3CAT8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lsgsk.Concentration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2B448C229D81BCB0011F5D5 /* Build configuration list for PBXProject "Concentration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B448D329D81BCC0011F5D5 /* Debug */,
+				C2B448D429D81BCC0011F5D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2B448D529D81BCC0011F5D5 /* Build configuration list for PBXNativeTarget "Concentration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B448D629D81BCC0011F5D5 /* Debug */,
+				C2B448D729D81BCC0011F5D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C251CBE829DED53300BB7427 /* Calculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Calculator;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C2B448BF29D81BCB0011F5D5 /* Project object */;
+}
