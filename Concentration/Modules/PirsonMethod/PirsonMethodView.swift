@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import Calculator
 
 final class PirsonMethodViewModel: ObservableObject {
 	enum KnownVolumes: Equatable {
@@ -8,12 +9,12 @@ final class PirsonMethodViewModel: ObservableObject {
 	}
 	
 	@Published var selected: PirsonMethodViewModel.KnownVolumes = .twoSubstance
-	@Published var value1: Decimal = 0
-	@Published var concentration1: Decimal = 0
-	@Published var value2: Decimal = 0
-	@Published var concentration2: Decimal = 0
-	@Published var valueResult: Decimal = 0
-	@Published var concentrationResult: Decimal = 0
+	@Published var value1: Decimal = Decimal.zero
+	@Published var concentration1: Decimal = Decimal.zero
+	@Published var value2: Decimal = Decimal.zero
+	@Published var concentration2: Decimal = Decimal.zero
+	@Published var valueResult: Decimal = Decimal.zero
+	@Published var concentrationResult: Decimal = Decimal.zero
 	
 	private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 	
@@ -26,32 +27,36 @@ final class PirsonMethodViewModel: ObservableObject {
 			let value1 = first.0; let concentration1 = first.1
 			let value2 = second.0; let concentration2 = second.1
 			let valueResult = result.0; let concentrationResult = result.1
-			switch self.selected {
-			case .twoSubstance:
-				let substance1 = value1 * concentration1
-				let substance2 = value2 * concentration2
-				self.valueResult = value1 + value2
-				if value1 + value2 > 0 {
-					self.concentrationResult = (substance1 + substance2) / (value1 + value2)
-				} else {
-					self.concentrationResult = 0
+			do {
+				let mix = try {
+					switch self.selected {
+					case .twoSubstance:
+						return try Mixing(v1: value1, ω1: concentration1, v2: value2, ω2: concentration2)
+					case .resultSubstance:
+						return try Mixing(ω1: concentration1, ω2: concentration2, vr: valueResult, ωr: concentrationResult)
+					}
+				}()
+				switch mix {
+				case let .solition(_, _, _, _, vr, ωr) where self.selected == .twoSubstance:
+					self.valueResult = vr
+					self.concentrationResult = ωr
+				case let .solition(v1, _, v2, _, _, _) where self.selected == .resultSubstance:
+					self.value1 = v1
+					self.value2 = v2
+				case .solition:
+					break
 				}
-			case .resultSubstance:
-				let subConcentr1 = abs(concentration2 - concentrationResult)
-				let subConcentr2 = abs(concentration1 - concentrationResult)
-				if concentration1 >= 0, concentration1 <= 100,
-				   concentration2 >= 0, concentration2 <= 100,
-				   subConcentr1 + subConcentr2 > 0,
-				   (concentration1 != 0 || concentration2 != 0),
-				   max(concentration1, concentration2) >= concentrationResult,
-				   min(concentration1, concentration2) <= concentrationResult {
-					self.value1 = (subConcentr1 * valueResult) / (subConcentr1 + subConcentr2)
-					self.value2 = valueResult - value1
-				}
-				else {
-					self.value1 = Decimal.nan
-					self.value2 = Decimal.nan
-				}
+			}
+			catch is Mixing.Errors where self.selected == .twoSubstance {
+				self.valueResult = Decimal.zero
+				self.concentrationResult = Decimal.zero
+			}
+			catch is Mixing.Errors where self.selected == .resultSubstance {
+				self.value1 = Decimal.zero
+				self.value2 = Decimal.zero
+			}
+			catch {
+				print("jh")
 			}
 		}
 		.store(in: &cancellables)

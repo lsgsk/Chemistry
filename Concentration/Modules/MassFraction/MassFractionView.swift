@@ -48,13 +48,25 @@ final class MassFractionViewModel: ObservableObject {
 								  $concentration.removeDuplicates())
 		.sink { [weak self] (selected, substance, solvent, concentration) in
 			guard let self else { return }
-			switch selected {
-			case .substance:
-				self.substance = MassFraction(solvent: solvent, concentration: concentration).value
-			case .solvent:
-				self.solvent = MassFraction(substance: substance, concentration: concentration).value
-			case .concentration:
-				self.concentration = MassFraction(substance: substance, solvent: solvent).value
+			do {
+				switch selected {
+				case .substance:
+					self.substance = try MassFraction(solvent: solvent, concentration: concentration).substance
+				case .solvent:
+					self.solvent = try MassFraction(substance: substance, concentration: concentration).solvent
+				case .concentration:
+					self.concentration = try MassFraction(substance: substance, solvent: solvent).concentration
+				}
+			}
+			catch {
+				switch selected {
+				case .substance:
+					self.substance = 0
+				case .solvent:
+					self.solvent = 0
+				case .concentration:
+					self.concentration = 0
+				}
 			}
 		}
 		.store(in: &cancellables)

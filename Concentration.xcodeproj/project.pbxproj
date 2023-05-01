@@ -91,6 +91,14 @@
 			path = MolarConcentration;
 			sourceTree = "<group>";
 		};
+		C292A91129FF95BB00BF2C95 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				C210971929FD4B2F00967F4D /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		C2B448BE29D81BCB0011F5D5 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +120,10 @@
 		C2B448C929D81BCB0011F5D5 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				C292A91129FF95BB00BF2C95 /* Navigation */,
 				C210971629FD178600967F4D /* UIKit */,
 				C2DA8FD729DEC31E006FC6AA /* Modules */,
 				C2B448CA29D81BCB0011F5D5 /* ConcentrationApp.swift */,
-				C210971929FD4B2F00967F4D /* Router.swift */,
 				C2B448CE29D81BCC0011F5D5 /* Assets.xcassets */,
 				C2B448D029D81BCC0011F5D5 /* Preview Content */,
 			);
@@ -141,10 +149,10 @@
 		C2DA8FD729DEC31E006FC6AA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C251CBEC29DEF7B500BB7427 /* MolarConcentration */,
-				C2DA8FD929DEC339006FC6AA /* PirsonMethod */,
-				C2DA8FCB29DEA499006FC6AA /* MolecularMass */,
 				C2DA8FD829DEC32A006FC6AA /* MassFraction */,
+				C251CBEC29DEF7B500BB7427 /* MolarConcentration */,
+				C2DA8FCB29DEA499006FC6AA /* MolecularMass */,
+				C2DA8FD929DEC339006FC6AA /* PirsonMethod */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

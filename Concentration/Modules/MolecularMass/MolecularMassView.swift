@@ -9,11 +9,11 @@ final class MolecularMassViewModel: ObservableObject {
 	}
 
 	@Published private var molecule = Molecule()
+	@Published var molarMass: Decimal = 0
+	@Published var formula = AttributedString()
+	@Published var mass: String = ""
 	@Published var isAsseptHidden: Bool
 	@Published var callback: ((Decimal) -> Void)
-	@Published var formula = AttributedString()
-	@Published var aeMass: String = ""
-	@Published var unifiedAtomicMass: Decimal = 0
 	private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 	
 	init(type: MolecularMassType) {
@@ -26,14 +26,14 @@ final class MolecularMassViewModel: ObservableObject {
 			self.isAsseptHidden = false
 			self.callback = callback
 		}
-		self.$molecule.sink { radicals in
-			self.unifiedAtomicMass = radicals.unifiedAtomicMass
-			if radicals.molecule.isEmpty {
+		self.$molecule.sink { molecule in
+			self.molarMass = molecule.molarMass
+			if molecule.structure.isEmpty {
 				self.formula = "Формула вещества"
-				self.aeMass = "0 а.е.м."
+				self.mass = "0 а.е.м."
 			}
 			else {
-				self.formula = radicals.molecule.reduce(into: AttributedString()) {
+				self.formula = molecule.structure.reduce(into: AttributedString()) {
 					$0.append(AttributedString($1.element.symbol))
 					if $1.count > 1 {
 						var count = AttributedString("\($1.count)")
@@ -41,7 +41,7 @@ final class MolecularMassViewModel: ObservableObject {
 						$0.append(count)
 					}
 				}
-				self.aeMass = "\(radicals.unifiedAtomicMass.description) а.е.м."
+				self.mass = "\(molecule.molarMass.description) а.е.м."
 			}
 		}
 		.store(in: &cancellables)
@@ -71,7 +71,7 @@ struct MolecularMassView: View {
 					.font(.headline)
 					.multilineTextAlignment(.center)
 					.padding()
-				Text(vm.aeMass.description)
+				Text(vm.mass.description)
 					.font(.subheadline)
 			}
 			.frame(maxWidth: .infinity)
@@ -82,7 +82,7 @@ struct MolecularMassView: View {
 			.listRowSeparator(.hidden)
 			.frame(maxWidth: .infinity)
 			Button {
-				vm.callback(vm.unifiedAtomicMass)
+				vm.callback(vm.molarMass)
 			} label: {
 				Text("Применить")
 					.frame(maxWidth: .infinity)
