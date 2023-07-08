@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Concentration</string>
+    <string name="choose_flavor">Choose Flavor</string>
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="back_button">Back</string>
 </resources>
