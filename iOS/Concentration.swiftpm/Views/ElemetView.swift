@@ -1,5 +1,4 @@
 import SwiftUI
-import Calculator
 
 struct ElemetView: View {
 	private let element: Element

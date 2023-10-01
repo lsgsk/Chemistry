@@ -1,6 +1,5 @@
 import SwiftUI
 import Combine
-import Calculator
 
 final class PirsonMethodViewModel: ObservableObject {
 	enum KnownVolumes: Equatable {

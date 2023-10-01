@@ -1,5 +1,4 @@
 import SwiftUI
-import Calculator
 
 struct AllElementsView: View {
 	private let elementClick: (Element) -> Void
